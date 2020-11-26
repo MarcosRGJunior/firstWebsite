@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SL Vôlei Feminino | {%block titulo%} {%endblock%}</title>
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="/static/css_nosso/site.css"/>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
+    <script src="/static/js_nosso/nosso-javascript.js" defer></script>
+    {% block estilos %}
+     
+    {% endblock %}
+  </head>
+
+ 
+
+  <body>
+    <div class="cor-menu">
+      <ul class="navbar navbar-dark bg-dark nav nav-pills nav-fill ">
+        <li class="nav-brand">
+          <a class="navbar-brand" href="/">
+            <img src="https://www.flaticon.com/svg/static/icons/svg/911/911138.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            Vôlei Feminino
+          </a>
+        </li>
+        
+
+        {% if not session.usuario%}
+          <li class="nav-brand">
+          <a class="nav-link" href="/entrar">Entrar</a>
+        </li> 
+        {%else%}
+        <li>
+          <a class="nav-link" href="/admin">Admin</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/sair">Sair</a>
+        </li>
+      {%endif%}
+      
+
+    </ul>
+  </div>
+
+
+    <div class="nosso-css">
+      <h1>Super Liga de Vôlei Feminino</h1>
+    </div>
+
+
+    <main>{%block main%} {%endblock%}</main>
+
+    <footer class="nosso-footer  footer">
+      <ul class="navbar navbar-dark bg-dark nav nav-pills nav-fill ">
+        <li class="nav-item">
+          <p> © Copyright | Todos os direitos são reservados a ninguém, menos o professor se for nos dar 10! :D</p>
+  
+            <a class="navbar-brand" href="/static/facebook.jpeg">
+              <img src="https://www.flaticon.com/svg/static/icons/svg/733/733547.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            </a>
+  
+            <a class="navbar-brand" href="https://www.instagram.com/voleidadepre/">
+              <img src="https://www.flaticon.com/svg/static/icons/svg/2111/2111463.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            </a>
+  
+            <a class="navbar-brand" href="https://www.youtube.com/watch?v=bZOhJKJo1f0&t=10s">
+              <img src="https://www.flaticon.com/svg/static/icons/svg/1400/1400856.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            </a>
+            <a class="navbar-brand" href="https://twitter.com/voleibolmemes">
+              <img src="https://www.flaticon.com/svg/static/icons/svg/1409/1409937.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            </a>
+        </li>
+    </footer>
+      
+
+  </body>
+
+</html>

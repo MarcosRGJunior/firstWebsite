@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SL Vôlei Feminino | {%block titulo%} {%endblock%}</title>
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+
+     
+    <link rel="stylesheet" href="/static/css_nosso/site.css"/>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
+    <script src="/static/js_nosso/nosso-javascript.js" defer></script>
+    {% block estilos %}
+      
+    {% endblock %}
+
+  </head>
+
+
+
+  <body>
+
+    <div class="cor-menu">
+      <ul class="navbar navbar-dark bg-dark nav nav-pills nav-fill ">
+      <li class="nav-item">
+        <a class="nav-link" href="/admin">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/equipe">Equipes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/partida">Partidas</a>
+      </li>
+      <li class="nav-brand">
+        {% if not session.usuario%} 
+        <a class="nav-link" href="/entrar">Entrar</a>
+      </li>  
+        {%else%}
+      <li>  
+        <a class="nav-link" href="/admin">Admin</a>
+      </li>
+      <li>  
+        <a class="nav-link" href="/sair">Sair</a>
+      </li>
+      {%endif%}
+      
+
+      <a class="navbar-brand" href="/admin">
+        <img src="https://www.flaticon.com/svg/static/icons/svg/911/911138.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+        Vôlei Feminino
+      </a>
+
+    </ul>
+  </div>
+
+    <div class="nosso-css">
+      <h1>Área Administrativa</h1>
+    </div>
+    
+    <div>
+      <main>{%block main%} {%endblock%}</main>
+    </div>
+  
+  </body>
+  <footer class="nosso-footer footer">
+
+    <ul class="navbar navbar-dark bg-dark nav nav-pills nav-fill ">
+      <li class="nav-item">
+        <p>Área administrativa, aqui só mexe quem pode! ;)</p>
+      </li>
+
+  </footer>
+</html>

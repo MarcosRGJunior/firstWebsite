@@ -1,0 +1,71 @@
+{%extends 'admin/modelo.html'%} {%block titulo%} Entrar {%endblock%} {%block
+  estilo%} {%endblock%} {%block main%}
+  
+  {% if erros%}
+      {%for erro in erros%}
+      <div class="alert alert-danger" role="alert">
+        {{erro}}
+      </div>
+      {%endfor%}
+  {% endif%}
+
+  <form class="nosso-form" method="POST" novalidate>
+    <div class="form-group">
+      <label for="partida-equipe_casa">Equipe Casa</label>
+      <select class="form-control" name="partida-equipe_casa" id="partida-equipe_casa">
+        {%for equipe in equipes%}
+          {% if partidas %}
+            {% if partidas[index].equipe_casa == equipe %}
+              <option value="{{partidas[index].equipe_casa}}" selected>{{equipe}}</option>
+            {% else %}
+              <option value="{{equipe}}">{{equipe}}</option>
+            {% endif %}
+          {% else %}
+            <option value="{{equipe}}">{{equipe}}</option> 
+          {% endif %}   
+          {%endfor%}
+      </select>
+    </div>
+    <div>
+      <label for="partida-equipe_visita">Equipe Visita</label>
+      <select class="form-control" name="partida-equipe_visita" id="partida-equipe_visita">
+        {%for equipe in equipes%}
+        {% if partidas[index].equipe_visita == equipe %}
+          <option value="{{partidas[index].equipe_visita}}" selected>{{equipe}}</option>
+        {% else %}
+          <option value="{{equipe}}">{{equipe}}</option>
+        {% endif %}
+      {%endfor%}
+
+
+      </select>
+    </div>
+    <div>
+      <label for="partida-pontos_casa">Pontos Casa</label>
+      <input
+        class="form-control"
+        type="text"
+        id="partida-pontos_casa"
+        name="partida-pontos_casa"
+        required
+        value="{{partidas[index].pontos_casa}}"
+      />
+    </div>
+    <div>
+      <label for="partida-pontos_visita">Pontos Visita</label>
+      <input
+        class="form-control"  
+        type="text"
+        id="partida-pontos_visita"
+        name="partida-pontos_visita"
+        required
+        value="{{partidas[index].pontos_visita}}"
+      />
+    </div>
+    <p></p>
+    <div class="nosso-css">
+      <button type="submit" class="btn btn-success">Salvar</button>
+      <button type="button" class="btn btn-warning limpar">Limpar</button>
+    </div>
+  </form>
+  {%endblock%}

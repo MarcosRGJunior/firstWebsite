@@ -1,0 +1,142 @@
+:root {
+  --cor-azul: #50bfd4;
+  --cor-branca: #fff;
+  --cor-cinza-claro: #ededed;
+  --cor-cinza: #cecece;
+  --cor-cinza-escuro: #696969;
+  --cor-grafite: #39454b;
+  --cor-vermelho: red;
+  --cor-preta: black;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  min-height: 100%;
+}
+
+.nosso-css h1 {
+  color: var(--cor-azul);
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.cor-menu a {
+  color: var(--cor-azul);
+}
+
+.nosso-footer p {
+  color: var(--cor-branca);
+  font-size: 20px;
+}
+
+.nosso-footer {
+  margin-top: 150px;
+}
+
+table {
+  text-align: center;
+}
+
+#vitoria {
+  color: #008b00;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+#empate {
+  color: #ffb90f;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+#derrota {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+#pontos {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+#pontos {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+thead tr {
+  background-color: #f2c42c;
+}
+
+.nosso-form {
+  max-width: 60%;
+  margin-left: 380px;
+}
+
+.alert-danger {
+  max-width: 60%;
+  margin-left: 380px;
+}
+
+.nossa-img {
+  margin: 0 auto;
+  width: 30%;
+}
+
+.botao-voltar {
+  margin-left: 50px;
+}
+
+.res-DERROTA {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: black;
+  background-color: #dc3545;
+}
+
+.res-VITORIA {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: black;
+  background-color: green;
+}
+
+.res-EMPATE {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: black;
+  background-color: #ffc107;
+}

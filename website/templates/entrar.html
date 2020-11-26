@@ -1,0 +1,53 @@
+{%extends 'modelo.html'%} {%block titulo%} Entrar {%endblock%} {%block estilo%}
+{%endblock%} {%block main%}
+
+<div class="nosso-css">
+  <h1>Acesso a Área Administrativa</h1>
+</div>
+
+  <div>
+    {% if erros %}
+    <ul>
+      {% for erro in erros%}
+        <li>{{erro}}</li>
+      {%endfor%}
+    </ul>
+  {% endif %}
+  </div>
+
+  <form class="nosso-form" method="POST" novalidate>
+  <div class="form-group">
+    <label for="login-email">Usuário</label>
+    <input
+      class="form-control"
+      type="email"
+      id="login-email"
+      name="login-email"
+      required
+      autofocus
+      placeholder="Digite seu e-mail"
+    />
+  </div>
+  <div>
+    <label for="login-senha">Senha</label>
+    <input
+      class="form-control"
+      type="password"
+      id="login-senha"
+      name="login-senha"
+      required
+      placeholder="Digite sua Senha"
+    />
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Lembrar de mim</label>
+  </div>
+
+  <p></p>
+  <div>
+    <button type="submit" class="btn btn-info">Entrar</button>
+    <button type="reset" class="btn btn-warning">Limpar</button>
+  </div>
+</form>
+{%endblock%}

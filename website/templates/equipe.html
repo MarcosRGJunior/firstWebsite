@@ -1,0 +1,34 @@
+{%extends 'modelo.html'%} {%block titulo%} Equipe {{equipe['nome']}}
+{%endblock%} {%block estilo%} {%endblock%} {%block main%}
+
+<div class="nosso-css">
+  <h1>Partidas | {{equipe['nome']}} | {{equipe['sigla']}} | {{equipe['local']}}  </h1>
+</div>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Casa</th>
+      <th scope="col">Visita</th>
+      <th scope="col">Pontos Casa</th>
+      <th scope="col">Pontos Visita</th>
+	    <th scope="col">Resultado</th>   
+    </tr>
+  </thead>
+  
+{%for p in partidas%}
+  
+  <tbody>
+      <td>{{p.equipe_casa}}</td>
+      <td>{{p.equipe_visita}}</td>
+      <td>{{p.pontos_casa}}</td>
+      <td>{{p.pontos_visita}}</td>
+      <td class="res-{{resultados[partidas.index(p)]}}">{{resultados[partidas.index(p)]}}</td>
+  </tr>
+  {%endfor%}
+  </tbody>
+  
+</table>
+
+{%endblock%}

@@ -1,0 +1,47 @@
+{%extends 'modelo.html'%} {%block titulo%} Home {%endblock%} 
+
+{% block estilos %}
+<link rel="stylesheet" href="/static/css_nosso/site.css"/>
+<link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
+{% endblock %}
+
+{%block main%}
+
+<div class="nosso-css">
+  <h1>Tabela Campeonato</h1>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Posição</th>
+      <th scope="col">Nome da Equipe</th>
+      <th scope="col">Pontos</th>
+      <th scope="col">Vitórias</th>
+	    <th scope="col">Empates</th>
+      <th scope="col">Derrotas</th>
+      <th scope="col">Partidas</th>
+	   
+    </tr>
+  </thead>
+  
+{%for lista in lista_partida%}
+  
+  <tbody>
+    <tr>
+      <th id="posicao" scope="row">{{lista_partida.index(lista) +1}}º</th>
+    <td>
+      <a href="/equipe/{{lista['sigla'] }}"
+        ><button type="button" class="btn btn-info">
+        {{lista['equipe']}} | {{lista['sigla'] }}</button></a>
+    </td>
+    <td id="pontos">{{lista['ponto']}}</td>
+    <td id="vitoria">{{lista['vitoria']}}</td>
+    <td id="empate">{{lista['empate']}}</td>
+    <td id="derrota">{{lista['derrota']}}</td>
+    <td id="pontos">{{lista['partidas']}}</td>
+  </tr>
+  </tbody>
+  {%endfor%}
+</table>
+{%endblock%}

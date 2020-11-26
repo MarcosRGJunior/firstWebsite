@@ -1,0 +1,54 @@
+{%extends 'admin/modelo.html'%} {%block titulo%} Equipe {%endblock%} {%block
+  estilos%} {%endblock%} {%block main%}
+  
+  {% if erros%}
+      {%for erro in erros%}
+      <div class="alert alert-danger" role="alert">
+        {{erro}}
+      </div>
+      {%endfor%}
+  {% endif%}
+  <form class="nosso-form" method="POST" novalidate>
+    <div class="form-group"></div>
+
+      <label for="equipe-nome">Equipe</label>
+      <input
+        class="form-control"
+        type="text"
+        id="equipe-nome"
+        name="equipe-nome"
+        required
+        autofocus
+        value="{{equipe['nome']}}"
+      />
+    </div>
+    <div class="nosso-form">
+      <label for="equipe-sigla">Sigla</label>
+      <input
+        class="form-control"
+        type="text"
+        id="equipe-sigla"
+        name="equipe-sigla"
+        required
+        value="{{equipe['sigla']}}"
+      />
+    </div>
+    <div class="nosso-form">
+      <label for="equipe-local">Local</label>
+      <input
+        class="form-control"
+        type="text"
+        id="equipe-local"
+        name="equipe-local"
+        required
+        value="{{equipe['local']}}"
+      />
+    </div>
+    <p></p>
+    <div class="nosso-css nosso-form">
+      <button type="submit" class="btn btn-success">Salvar</button>
+      <button type="button" class="btn btn-warning limpar">Limpar</button>
+    </div>
+  </form>
+  {%endblock%}
+  

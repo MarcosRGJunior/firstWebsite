@@ -1,0 +1,49 @@
+{%extends 'admin/modelo.html'%} {%block titulo%} Equipe
+{%endblock%} {%block estilos%} {%endblock%} 
+
+{%block main%}
+<div class="nosso-css">
+  <h1>Controle de Partidas</h1>
+</div>
+
+
+<div class="nosso-css">
+  <p>
+    <a href="/admin/partida/criar"><button type="button" class="btn btn-success">Inserir nova Partida</button></a>
+  </p>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+    <th>ID</th>
+    <th>Equipe Casa</th>
+    <th>Local Casa</th>
+    <th>Equipe Visita</th>
+    <th>Local Visita</th>
+		<th>Pontos Casa</th>
+		<th>Pontos Visita</th>
+		<th>Ações</th> 
+    </tr>
+  </thead>
+  
+{% for partida in partidas %}
+  
+  <tbody>
+    <td>{{partidas.index(partida) +1}}</td>
+    <td>{{partida.equipe_casa}}</td>
+    <td>{{partida.equipe_casa.local}}</td>
+    <td>{{partida.equipe_visita}}</td>
+    <td>{{partida.equipe_visita.local}}</td>
+    <td>{{partida.pontos_casa}}</td>
+    <td>{{partida.pontos_visita}}</td>
+    <td><a href="/admin/partida/alterar/{{partidas.index(partida)}}"><button type="button" class="btn btn-warning">Alterar</button></a> 
+	<a href="/admin/partida/excluir/{{partidas.index(partida)}}"><button type="button" class="btn btn-danger">Excluir</button></a></td>
+	</td>
+  </tr>
+  
+  </tbody>
+  {%endfor%} 
+</table>
+
+{%endblock%}
